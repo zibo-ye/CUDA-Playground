@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(cis565_getting_started)
+project(CUDA_Playground)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -10,7 +10,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Enable C++11 for host code
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 
 # Set a default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -22,7 +22,7 @@ endif()
 ########################################
 # CUDA Setup
 ########################################
-find_package(CUDA 10.0 REQUIRED)
+find_package(CUDA 12.0 REQUIRED)
 include(${CMAKE_MODULE_PATH}/CUDAComputesList.cmake)
 
 list(APPEND CUDA_NVCC_FLAGS ${CUDA_GENERATE_CODE})
